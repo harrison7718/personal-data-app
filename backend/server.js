@@ -7,6 +7,7 @@ require('dotenv').config();
 
 const foodRoutes = require('./routes/foodRoutes');
 const fitnessRoutes = require('./routes/fitnessRoutes');
+const workoutRoutes = require('./routes/workoutRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,6 +25,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 // Routes
 app.use('/api', foodRoutes);
 app.use('/api', fitnessRoutes);
+app.use('/api', workoutRoutes);
 
 // Start server
 app.listen(PORT, () => {
